@@ -22,6 +22,38 @@ public class UserClass implements Serializable {
 	String userCity;
 	String userState;
 
+	private String fontSize;
+	private boolean isNotification;
+	private boolean isHDImages;
+
+	public boolean isHasSelection() {
+		return hasSelection;
+	}
+
+	public String getFontSize() {
+		return fontSize;
+	}
+
+	public void setFontSize(String fontSize) {
+		this.fontSize = fontSize;
+	}
+
+	public boolean isNotification() {
+		return isNotification;
+	}
+
+	public void setNotification(boolean notification) {
+		isNotification = notification;
+	}
+
+	public boolean isHDImages() {
+		return isHDImages;
+	}
+
+	public void setHDImages(boolean HDImages) {
+		isHDImages = HDImages;
+	}
+
 	public boolean hasSelection() {
 		return hasSelection;
 	}

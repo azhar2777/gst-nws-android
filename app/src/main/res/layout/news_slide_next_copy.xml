@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/slide_next"
+    android:background="@drawable/next_slide_background_drawable"
+
     android:paddingVertical="15dp"
     android:paddingHorizontal="8dp"
     android:id="@+id/cl_next_news"
@@ -42,6 +43,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="NEXT UP"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat_regular"
             android:textColor="#13c07e"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -50,7 +54,9 @@
             android:id="@+id/tv_next_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:textSize="12sp"
             android:text="Lorem Ipsum is simply dummy text of printing and typesetting"
+            android:fontFamily="@font/montserrat_regular"
             android:textColor="@color/colorWhite"
             android:layout_marginHorizontal="6dp"
             app:layout_constraintStart_toEndOf="@+id/tv_next_up"
@@ -61,6 +67,8 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
 
 

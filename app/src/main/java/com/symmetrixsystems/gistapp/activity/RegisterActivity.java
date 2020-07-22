@@ -139,6 +139,22 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                         userClass.setUserFullName(""+objUser.optString("name"));
                         userClass.setLoggedIn(true);
                         userClass.setHasSelection(false);
+
+                        userClass.setFontSize(""+objUser.optString("fontsoze"));
+                        if(objUser.optInt("send_notification") == 1){
+                            userClass.setNotification(true);
+                        }
+                        else{
+                            userClass.setNotification(false);
+                        }
+
+                        if(objUser.optInt("hd_images") == 1){
+                            userClass.setHDImages(true);
+                        }
+                        else{
+                            userClass.setHDImages(false);
+                        }
+
                         Util.saveUserClass(mContext, userClass);
 
                         Intent intent = new Intent(mContext, MainCategoryActivity.class);

@@ -29,6 +29,7 @@
         android:textColor="@color/colorWhite"
         android:textSize="@dimen/main_catgeory_tsize"
         android:textStyle="bold"
+        android:fontFamily="@font/montserrat_regular"
         app:layout_constraintBottom_toBottomOf="@+id/iv_main_category"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

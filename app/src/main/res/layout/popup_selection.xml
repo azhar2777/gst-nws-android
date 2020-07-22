@@ -42,6 +42,7 @@
                     android:id="@+id/selected_category"
                     android:text="TOP STORIES"
                     android:textSize="@dimen/selected_catgeory_tsize"
+                    android:fontFamily="@font/montserrat_regular"
                     android:paddingVertical="10dp"
                     android:layout_marginTop="100dp"
                     android:textColor="@color/colorPrimary"

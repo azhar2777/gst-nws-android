@@ -24,4 +24,7 @@ public class Consts {
     public static String REACT_TO_STORY                             =   "react_to_story.php";
     public static String ADD_TO_BOOKMARK                             =   "add_to_bookmarked.php";
     public static String POLL_ANSWER                             =   "poll_answer.php";
+    public static String USER_INFO                             =   "get_user_details.php";
+    public static String LOVED_STORY                             =   "loved_story.php";
+    public static String UPDATE_USER_INFO                             =   "update_user_info.php";
 }

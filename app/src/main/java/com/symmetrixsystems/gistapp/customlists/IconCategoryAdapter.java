@@ -166,6 +166,7 @@ public class IconCategoryAdapter extends RecyclerView.Adapter<IconCategoryAdapte
                Intent intentNews = new Intent(mContext, StoryListActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putInt("icon_cat", iconCategoryid);
+                bundle.putString("icon_cat_name", iconCategory.getCatName());
                 intentNews.putExtras(bundle);
                 mContext.startActivity(intentNews);
 

@@ -15,6 +15,7 @@
         android:text="@string/reg_personalize"
         android:textColor="@color/register_label_personalize"
         android:textSize="@dimen/register_personalize_header"
+        android:fontFamily="@font/montserrat_regular"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -57,6 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/reg_step1_text"
+            android:fontFamily="@font/montserrat_regular"
 
             android:textSize="@dimen/reg_step1_size"
             app:layout_constraintTop_toTopOf="@id/tv_reg__step_1"
@@ -128,6 +130,8 @@
                     android:layout_height="wrap_content"
                     android:text="NAME"
                     android:textColor="@color/register_label_heading"
+                    android:fontFamily="@font/montserrat_regular"
+
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
@@ -140,6 +144,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/ctrl_scr_tap_to_add"
+                    android:fontFamily="@font/montserrat_regular"
+
                     android:textColor="@color/register_label_tap"
                     android:layout_marginTop="20dp"
                     app:layout_constraintTop_toBottomOf="@+id/tv_label_name"
@@ -160,6 +166,8 @@
                     android:paddingVertical="9dp"
                     android:textColor="@color/control_page_tv_tap_to_add_your_name_t_size"
                     android:textSize="@dimen/control_page_et_your_name_text_size"
+                    android:fontFamily="@font/montserrat_regular"
+
                     app:layout_constraintTop_toBottomOf="@+id/tv_label_name"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
@@ -192,6 +200,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="EMAIL"
+                    android:fontFamily="@font/montserrat_regular"
+
                     android:textColor="@color/register_label_heading"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
@@ -206,6 +216,8 @@
                     android:layout_height="wrap_content"
                     android:text="@string/ctrl_scr_tap_to_add"
                     android:textColor="@color/register_label_tap"
+                    android:fontFamily="@font/montserrat_regular"
+
                     android:layout_marginTop="20dp"
                     app:layout_constraintTop_toBottomOf="@+id/tv_label_email"
                     app:layout_constraintLeft_toLeftOf="parent"
@@ -222,6 +234,8 @@
                     android:layout_marginHorizontal="6dp"
                     android:background="@drawable/reg_et_border_selector"
                     android:hint="@string/ctrl_scr_tap_to_add"
+                    android:fontFamily="@font/montserrat_regular"
+
                     android:paddingHorizontal="6dp"
                     android:paddingVertical="9dp"
                     android:textColor="@color/control_page_tv_tap_to_add_your_name_t_size"
@@ -258,6 +272,8 @@
                     android:layout_height="wrap_content"
                     android:text="LOCATION"
                     android:textColor="@color/register_label_heading"
+                    android:fontFamily="@font/montserrat_regular"
+
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
@@ -271,6 +287,8 @@
                     android:layout_height="wrap_content"
                     android:text="@string/ctrl_scr_tap_to_add"
                     android:textColor="@color/register_label_tap"
+                    android:fontFamily="@font/montserrat_regular"
+
                     android:layout_marginTop="20dp"
                     app:layout_constraintTop_toBottomOf="@+id/tv_label_location"
                     app:layout_constraintLeft_toLeftOf="parent"
@@ -307,6 +325,8 @@
             android:text="@string/btn_continue"
             android:textColor="@color/reg_btn_continue"
             android:textSize="@dimen/reg_btn_size"
+            android:fontFamily="@font/montserrat_regular"
+
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"

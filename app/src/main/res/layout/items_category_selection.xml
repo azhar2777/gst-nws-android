@@ -17,6 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:text="#POLITICS"
+        android:fontFamily="@font/montserrat_regular"
         android:gravity="center_horizontal"
         android:paddingVertical="15dp"
 

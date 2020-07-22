@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/activity_selection_bg"
+    android:background="@color/activity_bg"
 
     >
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -28,6 +28,7 @@
             android:textSize="@dimen/control_heading_size"
             android:textColor="@color/colorBlack"
             android:textStyle="bold"
+            android:fontFamily="@font/montserrat_regular"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

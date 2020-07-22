@@ -31,6 +31,7 @@
     <color name="cl_white_transparent">#CCFFFFFF</color>
 
     <!-- Story Screen -->
+    <color name="video_view_bg">#000000</color>
     <color name="page_title_below_coloe">#717171</color>
     <color name="story_green_rectangle">#13c07e</color>
     <color name="story_content_color">#696969</color>

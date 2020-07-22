@@ -38,6 +38,7 @@
                 android:id="@+id/ic_cat_name"
                 android:text="@string/selection_all_categories"
                 android:textColor="@color/colorBlack"
+                android:fontFamily="@font/montserrat_regular"
                 app:layout_constraintTop_toBottomOf="@id/iv_icon_category"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -34,16 +34,19 @@ public class SplashScreenActivity extends AppCompatActivity {
                             //Intent splashIntent = new Intent(mContext, NewsNewActivity.class);
                             Intent splashIntent = new Intent(mContext, StoryListActivity.class);
                             startActivity(splashIntent);
+                            finish();
                         }
                         else{
                             Intent splashIntent = new Intent(mContext, MainCategoryActivity.class);
                             startActivity(splashIntent);
+                            finish();
                         }
 
                     }
                     else {
                         Intent splashIntent = new Intent(mContext, GetStartedActivity.class);
                         startActivity(splashIntent);
+                        finish();
                     }
                     /*Intent splashIntent = new Intent(mContext, GetStartedActivity.class);
                     startActivity(splashIntent);
