@@ -21,6 +21,26 @@ public class GetStory implements Serializable {
     private String userSelections;
     private String dailyQuote;
     private String iconCategory;
+    private String adData;
+
+    public int getShowAdAfter() {
+        return showAdAfter;
+    }
+
+    public void setShowAdAfter(int showAdAfter) {
+        this.showAdAfter = showAdAfter;
+    }
+
+    private int showAdAfter;
+
+    public String getAdData() {
+        return adData;
+    }
+
+    public void setAdData(String adData) {
+        this.adData = adData;
+    }
+
 
 
     public String getDailyQuote() {

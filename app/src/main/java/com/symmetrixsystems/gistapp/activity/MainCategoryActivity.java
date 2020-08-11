@@ -229,7 +229,7 @@ public class MainCategoryActivity extends AppCompatActivity implements Selection
     }
 
 
-    public void onMainCategoryClick(int categoryId) {
+    public void onMainCategoryClick(int categoryId, String categoryName) {
         Log.v(TAG, "category id: "+categoryId);
 
         if (popUpChildcat == null || !popUpChildcat.isShowing()) {
@@ -255,6 +255,7 @@ public class MainCategoryActivity extends AppCompatActivity implements Selection
                 }
             });
 
+            tvSelectedCat.setText(""+categoryName);
 
             popUpChildcat.setFocusable(true);
 

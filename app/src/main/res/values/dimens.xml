@@ -49,10 +49,27 @@
 
 
     <!-- story screen-->
+    <dimen name="story_page_title_size">14sp</dimen>
+    <dimen name="story_page_title_size2">12sp</dimen>
+    <dimen name="story_title_fsize">14sp</dimen>
+    <dimen name="story_title_line_h">22sp</dimen>
+    <dimen name="story_content_fsize">12sp</dimen>
+    <dimen name="story_content_line_h">15sp</dimen>
+    <dimen name="story_share_card_h">40dp</dimen>
+    <dimen name="story_share_img_h">25dp</dimen>
+    <dimen name="story_share_card_margin_t">20dp</dimen>
     <dimen name="story_image_container_height">150dp</dimen>
     <dimen name="content_provider_image_size_w">70dp</dimen>
     <dimen name="ic_react_image_size_w">30dp</dimen>
     <dimen name="ic_react_image_margin_end">9dp</dimen>
+    <dimen name="ic_react_image_padding">3dp</dimen>
+
+    <!-- Next Screen-->
+    <dimen name="nextup_story_fsize">13sp</dimen>
+    <dimen name="next_story_title_fsize">12sp</dimen>
+    <dimen name="next_story_image_w">40dp</dimen>
+    <dimen name="next_story_container_padding_v">15dp</dimen>
+    <dimen name="next_story_container_padding_h">8dp</dimen>
 
     <!-- Bottomsheet -->
 
@@ -64,4 +81,9 @@
     <!-- Slide Page -->
     <dimen name="sliding_dotw">15dp</dimen>
     <dimen name="sliding_doth">15dp</dimen>
+
+    <!-- Get Started -->
+    <dimen name="cl_mob_margin_top">35dp</dimen>
+    <dimen name="get_started_image_h">250dp</dimen>
+    <dimen name="get_started_mob_container_h">600dp</dimen>
 </resources>

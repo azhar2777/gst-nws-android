@@ -137,6 +137,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                         UserClass userClass   =   new UserClass();
                         userClass.setUserId(""+userId);
                         userClass.setUserFullName(""+objUser.optString("name"));
+                        userClass.setUserEmoji("");
                         userClass.setLoggedIn(true);
                         userClass.setHasSelection(false);
 

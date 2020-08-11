@@ -3,7 +3,9 @@ package com.symmetrixsystems.gistapp.async;
 import android.content.Context;
 import android.util.Log;
 
+import com.symmetrixsystems.gistapp.R;
 import com.symmetrixsystems.gistapp.consts.Consts;
+import com.symmetrixsystems.gistapp.custom.CustomAsynkLoader;
 import com.symmetrixsystems.gistapp.listener.RegisterUserListener;
 import com.symmetrixsystems.gistapp.listener.VolleyCallback;
 import com.symmetrixsystems.gistapp.model.GetStory;
@@ -22,6 +24,7 @@ import java.util.ArrayList;
  */
 public class RegisterUserTask {
     Context mContext;
+    private CustomAsynkLoader mDialog;
     private String requestString;
     private String TAG = "RegisterUserTask";
     public RegisterUserListener mListener;
@@ -29,11 +32,14 @@ public class RegisterUserTask {
     public RegisterUserTask(Context mContext, String requestString){
         this.mContext = mContext;
         this.requestString = requestString;
+        mDialog = new CustomAsynkLoader(mContext);
+        mDialog.setTitle(R.string.app_name);
         doNetworkTask();
     }
 
     public void doNetworkTask(){
-
+        if (!mDialog.isDialogShowing())
+            mDialog.ShowDialog();
         Util.postWithVolley(Consts.BASE_URL + Consts.CRAETE_USER, requestString, mContext, new VolleyCallback() {
             @Override
             public void onSuccess(String result) {
@@ -59,6 +65,8 @@ public class RegisterUserTask {
                 registerUser.setUserData(jObj.optString("user_data"));
                 registerUsers.add(registerUser);
                 mListener.registerUserCallBack(registerUsers);
+                if (mDialog.isDialogShowing())
+                    mDialog.DismissDialog();
             }
 
         } catch (JSONException e) {

@@ -17,6 +17,9 @@ import java.io.Serializable;
 public class AddToBookmark implements Serializable {
     private int errorCode;
 
+
+    private int bookmarkedRemoved;
+
     public int getErrorCode() {
         return errorCode;
     }
@@ -24,4 +27,13 @@ public class AddToBookmark implements Serializable {
     public void setErrorCode(int errorCode) {
         this.errorCode = errorCode;
     }
+
+    public int getBookmarkedRemoved() {
+        return bookmarkedRemoved;
+    }
+
+    public void setBookmarkedRemoved(int bookmarkedRemoved) {
+        this.bookmarkedRemoved = bookmarkedRemoved;
+    }
+
 }

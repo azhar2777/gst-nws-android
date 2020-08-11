@@ -17,6 +17,7 @@ public class UserClass implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String userFullName;
 	private String UserId;
+	private String userEmoji;
 	private boolean isLoggedIn;
 	private boolean hasSelection;
 	String userCity;
@@ -68,21 +69,6 @@ public class UserClass implements Serializable {
 		return serialVersionUID;
 	}
 
-	public String getUserCity() {
-		return userCity;
-	}
-
-	public void setUserCity(String userCity) {
-		this.userCity = userCity;
-	}
-
-	public String getUserState() {
-		return userState;
-	}
-
-	public void setUserState(String userState) {
-		this.userState = userState;
-	}
 
 	public String getUserEmail() {
 		return userEmail;
@@ -94,15 +80,7 @@ public class UserClass implements Serializable {
 
 	private String userEmail;
 
-	public String getJourneyId() {
-		return journeyId;
-	}
 
-	public void setJourneyId(String journeyId) {
-		this.journeyId = journeyId;
-	}
-
-	private String journeyId;
 
 
 
@@ -129,7 +107,16 @@ public class UserClass implements Serializable {
 		return serialVersionUID;
 	}
 
-	
-	
-	
+
+
+	public String getUserEmoji() {
+		return userEmoji;
+	}
+
+	public void setUserEmoji(String userEmoji) {
+		this.userEmoji = userEmoji;
+	}
+
+
+
 }

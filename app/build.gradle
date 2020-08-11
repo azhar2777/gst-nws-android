@@ -7,8 +7,8 @@ android {
         applicationId "com.symmetrixsystems.gistapp"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 18
-        versionName "1.0.18"
+        versionCode 25
+        versionName "1.0.26"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -52,6 +52,12 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:1.1.0"
     // For control over item selection of both touch and mouse driven selection
     implementation "androidx.recyclerview:recyclerview-selection:1.1.0-rc01"
+
+    implementation 'androidx.appcompat:appcompat:1.1.0-alpha05'
+
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.17'
+
+
 
 
 }

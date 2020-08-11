@@ -96,6 +96,8 @@ public class MainCategoryAdapter extends RecyclerView.Adapter<MainCategoryAdapte
             public void onClick(View view) {
                 int parentCategory  =   mainCategory.getId();
 
+                String parentCategoryName = mainCategory.getCatName();
+
                 /*Intent intentCategory = new Intent(mContext	,
                         CategorySelectionActivity.class);
 
@@ -104,7 +106,7 @@ public class MainCategoryAdapter extends RecyclerView.Adapter<MainCategoryAdapte
                 bundle.putString("parent_category_name", mainCategory.getCatName());
                 intentCategory.putExtras(bundle);
                 mContext.startActivity(intentCategory);*/
-                ((MainCategoryActivity) mContext).onMainCategoryClick(parentCategory);
+                ((MainCategoryActivity) mContext).onMainCategoryClick(parentCategory, parentCategoryName);
             }
         });
 

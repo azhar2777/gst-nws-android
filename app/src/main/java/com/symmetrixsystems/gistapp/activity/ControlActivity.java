@@ -4,17 +4,21 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.content.ContextCompat;
 
 import com.symmetrixsystems.gistapp.R;
 import com.symmetrixsystems.gistapp.async.UpdateUserTask;
@@ -50,6 +54,7 @@ public class ControlActivity extends AppCompatActivity implements View.OnClickLi
     private CardView cvContact, cvShare, cvRate;
 
     private ConstraintLayout clFooter;
+    private SwitchCompat switchNightMode;
 
 
     String userId;
@@ -59,6 +64,8 @@ public class ControlActivity extends AppCompatActivity implements View.OnClickLi
 
     SharedPreferences settings;
     SharedPreferences.Editor editor;
+
+    boolean switchFirst = true;
 
 
     @Override
@@ -109,6 +116,13 @@ public class ControlActivity extends AppCompatActivity implements View.OnClickLi
         clFooter = findViewById(R.id.ll_footer);
         clFooter.setOnClickListener(this);
 
+        switchNightMode = findViewById(R.id.swicth_night_mode);
+        //switchNightMode.setOnClickListener(this);
+
+
+
+
+
 
 
     }
@@ -116,6 +130,37 @@ public class ControlActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onResume() {
         super.onResume();
+
+        switchNightMode.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean status) {
+                //changeToNightMode();
+                if(status){
+                    Log.v(TAG, "Checked Button");
+                    changeToNightMode(status);
+//                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+//                    editor.putString("enable_night_mode", ""+getResources().getString(R.string.ctrl_scr_night_mode_yes));
+//                    editor.apply();
+                }
+                else{
+                    Log.v(TAG, "Unchecked Button");
+                    changeToNightMode(status);
+//                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+//                    editor.putString("enable_night_mode", ""+getResources().getString(R.string.ctrl_scr_night_mode_no));
+//                    editor.apply();
+                }
+
+            }
+        });
+
+        String enableNightMode    = settings.getString("enable_night_mode", ""+getResources().getString(R.string.ctrl_scr_night_mode_no));
+        Log.v("enableNightMode", ""+enableNightMode);
+        if(enableNightMode.equals(""+getResources().getString(R.string.ctrl_scr_night_mode_yes))){
+            switchNightMode.setChecked(true);
+        }
+        else{
+            switchNightMode.setChecked(false);
+        }
         getUserDetails();
     }
 
@@ -128,34 +173,99 @@ public class ControlActivity extends AppCompatActivity implements View.OnClickLi
                 break;
             case R.id.tv_btnSmal:
                 fontSize = 1;
-                changeFontSize(fontSize);updateProfile();break;
+                editor.putString("font_size", ""+getResources().getString(R.string.ctrl_scr_txt_size_small));
+                editor.apply();
+                changeFontSize(fontSize);;
+                 break;
             case R.id.tv_btnMedium:
                 fontSize = 2;
-                changeFontSize(fontSize);updateProfile();break;
+                editor.putString("font_size", ""+getResources().getString(R.string.ctrl_scr_txt_size_medium));
+                editor.apply();
+                changeFontSize(fontSize);
+                 break;
             case R.id.tv_btnLarge:
                 fontSize = 3;
-                changeFontSize(fontSize);updateProfile();break;
+                editor.putString("font_size", ""+getResources().getString(R.string.ctrl_scr_txt_size_large));
+                editor.apply();
+                changeFontSize(fontSize);
+                 break;
             case R.id.tv_notfiication_on:
                 notify = 1;
-                setNotification(notify);updateProfile();break;
+                editor.putString("notification", ""+getResources().getString(R.string.ctrl_scr_notfication_on));
+                editor.apply();
+                setNotification(notify);break;
             case R.id.tv_notfiication_off:
                 notify = 0;
-                setNotification(notify);updateProfile();break;
+                editor.putString("notification", ""+getResources().getString(R.string.ctrl_scr_notfication_off));
+                editor.apply();
+                setNotification(notify);break;
             case R.id.tv_hd_images_on:
                 hdImage = 1;
-                setHdImage(hdImage);updateProfile();break;
+                editor.putString("hd_image", ""+getResources().getString(R.string.ctrl_scr_label_set_hd_images_on));
+                editor.apply();
+                setHdImage(hdImage);
+                break;
             case R.id.tv_hd_images_off:
                 hdImage = 0;
-                setHdImage(hdImage);updateProfile();break;
+                editor.putString("hd_image", ""+getResources().getString(R.string.ctrl_scr_label_set_hd_images_off));
+                editor.apply();
+                setHdImage(hdImage);
+                break;
 
             case R.id.ll_footer:
                 updateProfile();
                 break;
+//            case R.id.swicth_night_mode:
+//                changeToNightMode();
+//                break;
+            default:break;
         }
     }
 
+    private void changeToNightMode(boolean status) {
+
+        if(status){
+            Log.v("chkImmoblizer","chkImmoblizer TRUE");
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            editor.putString("enable_night_mode", ""+getResources().getString(R.string.ctrl_scr_night_mode_yes));
+            editor.apply();
+        }
+        else{
+            Log.v("chkImmoblizer","chkImmoblizer FALSE");
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            editor.putString("enable_night_mode", ""+getResources().getString(R.string.ctrl_scr_night_mode_no));
+            editor.apply();
+        }
+//
+
+//        if(switchFirst){
+//            Log.v("chkImmoblizer", "chkImmoblizer first");
+//            switchFirst = false;
+//        }
+//        else{
+//            if(status){
+//                Log.v("chkImmoblizer","chkImmoblizer TRUE");
+//            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+//                editor.putString("enable_night_mode", ""+getResources().getString(R.string.ctrl_scr_night_mode_yes));
+//                editor.apply();
+//            }
+//            else{
+//                Log.v("chkImmoblizer","chkImmoblizer FALSE");
+//            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+//                editor.putString("enable_night_mode", ""+getResources().getString(R.string.ctrl_scr_night_mode_no));
+//                editor.apply();
+//            }
+//            switchFirst = false;
+//        }
+
+//        Toast.makeText(mContext, "Night mode "+setNightMode, Toast.LENGTH_SHORT).show();
+
+
+    }
+
     private void changeFontSize(int fontSize){
-        if(fontSize ==1){
+        String userFontSize    = settings.getString("font_size", ""+getResources().getString(R.string.ctrl_scr_txt_size_small));
+        if(userFontSize.equals(""+getResources().getString(R.string.ctrl_scr_txt_size_small))){
             tvSmall.setBackground(mContext.getResources().getDrawable(R.drawable.btn_control_selected_drawable));
             tvMedium.setBackground(mContext.getResources().getDrawable(R.drawable.btn_control_normal_drawable));
             tvLarge.setBackground(mContext.getResources().getDrawable(R.drawable.btn_control_normal_drawable));
@@ -165,16 +275,8 @@ public class ControlActivity extends AppCompatActivity implements View.OnClickLi
             tvLarge.setTextColor(mContext.getResources().getColorStateList(R.color.btn_control_text_drawable));
 
         }
-        else if(fontSize ==2){
-            tvSmall.setBackground(mContext.getResources().getDrawable(R.drawable.btn_control_normal_drawable));
-            tvMedium.setBackground(mContext.getResources().getDrawable(R.drawable.btn_control_selected_drawable));
-            tvLarge.setBackground(mContext.getResources().getDrawable(R.drawable.btn_control_normal_drawable));
 
-            tvSmall.setTextColor(mContext.getResources().getColorStateList(R.color.btn_control_text_drawable));
-            tvMedium.setTextColor(mContext.getResources().getColorStateList(R.color.btn_control_text_selected_drawable));
-            tvLarge.setTextColor(mContext.getResources().getColorStateList(R.color.btn_control_text_drawable));
-        }
-        else if(fontSize ==3){
+        else if(userFontSize.equals(""+getResources().getString(R.string.ctrl_scr_txt_size_large))){
             tvSmall.setBackground(mContext.getResources().getDrawable(R.drawable.btn_control_normal_drawable));
             tvMedium.setBackground(mContext.getResources().getDrawable(R.drawable.btn_control_normal_drawable));
             tvLarge.setBackground(mContext.getResources().getDrawable(R.drawable.btn_control_selected_drawable));
@@ -182,6 +284,16 @@ public class ControlActivity extends AppCompatActivity implements View.OnClickLi
             tvSmall.setTextColor(mContext.getResources().getColorStateList(R.color.btn_control_text_drawable));
             tvMedium.setTextColor(mContext.getResources().getColorStateList(R.color.btn_control_text_drawable));
             tvLarge.setTextColor(mContext.getResources().getColorStateList(R.color.btn_control_text_selected_drawable));
+        }
+
+        else {
+            tvSmall.setBackground(mContext.getResources().getDrawable(R.drawable.btn_control_normal_drawable));
+            tvMedium.setBackground(mContext.getResources().getDrawable(R.drawable.btn_control_selected_drawable));
+            tvLarge.setBackground(mContext.getResources().getDrawable(R.drawable.btn_control_normal_drawable));
+
+            tvSmall.setTextColor(mContext.getResources().getColorStateList(R.color.btn_control_text_drawable));
+            tvMedium.setTextColor(mContext.getResources().getColorStateList(R.color.btn_control_text_selected_drawable));
+            tvLarge.setTextColor(mContext.getResources().getColorStateList(R.color.btn_control_text_drawable));
         }
     }
 
@@ -247,10 +359,12 @@ public class ControlActivity extends AppCompatActivity implements View.OnClickLi
     private void updateProfile(){
         userId  =   Util.fetchUserClass(mContext).getUserId();
         userName = etName.getText().toString();
+        String emoji = etEmoji.getText().toString();
         JSONObject objUpdateUser =   new JSONObject();
         try {
             objUpdateUser.put("action", "update_user_info");
             objUpdateUser.put("user_id", userId);
+            objUpdateUser.put("user_emoji", emoji);
             objUpdateUser.put("user_name", userName);
             objUpdateUser.put("font_size", fontSize);
             objUpdateUser.put("notification", notify);
@@ -270,6 +384,27 @@ public class ControlActivity extends AppCompatActivity implements View.OnClickLi
 
     }
 
+    public static String unescapeJava(String escaped) {
+
+        if (escaped.indexOf("\\u") == -1)
+            return escaped;
+
+        String processed = "";
+
+        int position = escaped.indexOf("\\u");
+        while (position != -1) {
+            if (position != 0)
+                processed += escaped.substring(0, position);
+            String token = escaped.substring(position + 2, position + 6);
+            escaped = escaped.substring(position + 6);
+            processed += (char) Integer.parseInt(token, 16);
+            position = escaped.indexOf("\\u");
+        }
+        processed += escaped;
+
+        return processed;
+    }
+
     @Override
     public void userInfoCallback(ArrayList<UserInfo> userInfos) {
         if (userInfos.size() > 0){
@@ -284,7 +419,16 @@ public class ControlActivity extends AppCompatActivity implements View.OnClickLi
                     userEmail = objUser.optString("user_email");
                     hasSelection = objUser.optInt("has_selection");
 
+
+
+
+
+
+
                     etName.setText(userName);
+                    if(!objUser.optString("user_emoji").equals("")) {
+                        etEmoji.setText(Html.fromHtml(objUser.optString("user_emoji")));
+                    }
 
                     //etm.setText(userEmail);
 
@@ -301,6 +445,12 @@ public class ControlActivity extends AppCompatActivity implements View.OnClickLi
                     UserClass userClass   =   new UserClass();
                     userClass.setUserId(""+userId);
                     userClass.setUserFullName(userName);
+                    if(!objUser.optString("user_emoji").equals("")) {
+                        userClass.setUserEmoji(""+objUser.optString("user_emoji"));
+                    }
+                    else{
+                        userClass.setUserEmoji("");
+                    }
                     userClass.setLoggedIn(true);
                     if(hasSelection==1) {
                         userClass.setHasSelection(true);
@@ -348,8 +498,13 @@ public class ControlActivity extends AppCompatActivity implements View.OnClickLi
         if(updateUsers.size() > 0){
             int errorCode = updateUsers.get(0).getErrorCode();
             if(errorCode ==0){
-                startActivity(getIntent());
-                finish();
+                //startActivity(getIntent());
+                //finish();
+                getUserDetails();
+                Log.v(TAG, ""+mContext.getResources().getString(R.string.profile_upadted));
+            }
+            else{
+                Util.showMessageWithOk(mContext, ""+mContext.getResources().getString(R.string.profile_not_upadted));
             }
         }
         else{

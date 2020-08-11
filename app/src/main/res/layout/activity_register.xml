@@ -152,6 +152,9 @@
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
 
+                    android:visibility="visible"
+
+
 
                     />
                 <EditText
@@ -162,8 +165,10 @@
                     android:layout_marginHorizontal="6dp"
                     android:background="@drawable/reg_et_border_selector"
                     android:hint="@string/ctrl_scr_tap_to_add"
-                    android:paddingHorizontal="6dp"
-                    android:paddingVertical="9dp"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="10dp"
+
+                    android:gravity="center_vertical"
                     android:textColor="@color/control_page_tv_tap_to_add_your_name_t_size"
                     android:textSize="@dimen/control_page_et_your_name_text_size"
                     android:fontFamily="@font/montserrat_regular"
@@ -236,8 +241,8 @@
                     android:hint="@string/ctrl_scr_tap_to_add"
                     android:fontFamily="@font/montserrat_regular"
 
-                    android:paddingHorizontal="6dp"
-                    android:paddingVertical="9dp"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="10dp"
                     android:textColor="@color/control_page_tv_tap_to_add_your_name_t_size"
                     android:textSize="@dimen/control_page_et_your_name_text_size"
                     app:layout_constraintTop_toBottomOf="@+id/tv_label_email"

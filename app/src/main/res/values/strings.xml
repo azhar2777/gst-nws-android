@@ -26,10 +26,14 @@
     <string name="ctrl_scr_label_contact">Contact</string>
     <string name="ctrl_scr_label_share">Share</string>
     <string name="ctrl_scr_label_rate">Rate</string>
-    <string name="ctrl_scr_label_mode">Mode</string>
+    <string name="ctrl_scr_label_mode">Night Mode</string>
+    <string name="ctrl_scr_night_mode_no">No</string>
+    <string name="ctrl_scr_night_mode_yes">Yes</string>
     <string name="ctrl_privacy">Privacy Policy</string>
     <string name="ctrl_terms">Terms &amp; conditions</string>
     <string name="btn_update_profile">Update</string>
+    <string name="profile_upadted">Profile updated successfully</string>
+    <string name="profile_not_upadted">Profile was not updated</string>
 
     <!-- Selection Screen -->
     <string name="selection_title">Selection</string>
@@ -112,13 +116,16 @@
     <string name="slide_four_heading">Choose What You Like</string>
     <string name="slide_four_text">We have categorized news around you, so go ahead experience a completely new way to stay on top</string>
 
-    <string name="slide_five_heading">GIST IS NOT\nAN APP !</string>
-    <string name="slide_five_heading2">It\'s a Phenomenon</string>
-    <string name="slide_five_text">Don\'t be disconnected, discover a completely new way stay connected with the news and all the important stuff around you.</string>
+    <string name="slide_five_heading">Share The Gist !</string>
+    <string name="slide_five_text">Show the world you care. Share, react, love what you like and make your heard.</string>
 
-    <string name="slide_six_heading">It\'s a Phenomenon</string>
+    <string name="slide_six_heading">GIST IS NOT\nAN APP !</string>
+    <string name="slide_six_heading2">It\'s a Phenomenon</string>
     <string name="slide_six_text">Don\'t be disconnected, discover a completely new way stay connected with the news and all the important stuff around you.</string>
 
     <string name="btn_get_started">Get Started</string>
+
+    <string name="start">GOT IT</string>
+    <string name="next">NEXT</string>
 
 </resources>

@@ -21,10 +21,6 @@ import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 
@@ -34,13 +30,8 @@ import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.symmetrixsystems.gistapp.R;
-import com.symmetrixsystems.gistapp.activity.NavActivity;
-import com.symmetrixsystems.gistapp.activity.NewsNewActivity;
-import com.symmetrixsystems.gistapp.activity.PersistentActivity;
-import com.symmetrixsystems.gistapp.activity.StoryActivity;
 import com.symmetrixsystems.gistapp.activity.StoryListActivity;
 import com.symmetrixsystems.gistapp.consts.Consts;
-import com.symmetrixsystems.gistapp.fragment.StoryFragment;
 import com.symmetrixsystems.gistapp.model.IconCategoryData;
 
 import java.util.List;

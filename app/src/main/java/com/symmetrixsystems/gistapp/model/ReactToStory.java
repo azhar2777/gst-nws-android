@@ -18,6 +18,18 @@ public class ReactToStory implements Serializable {
     private int errorCode;
     private int reactionType;
 
+    private int storyId;
+    private String message;
+
+    public int getStoryId() {
+        return storyId;
+    }
+
+    public void setStoryId(int storyId) {
+        this.storyId = storyId;
+    }
+
+
     public int getReactionType() {
         return reactionType;
     }
@@ -26,7 +38,6 @@ public class ReactToStory implements Serializable {
         this.reactionType = reactionType;
     }
 
-    private String message;
 
     public int getErrorCode() {
         return errorCode;
